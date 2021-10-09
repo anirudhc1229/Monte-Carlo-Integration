@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from multiprocessing import Pool
 import os
-import time
 
 # GOAL: Approximate the integral of function f from lower bound a to upper bound b using Monte Carlo simulation
 
@@ -20,12 +19,9 @@ def mcIntegrate(p):
 
 if __name__ == "__main__":
     
-    start = time.time()
     # run simulation N times in parallel and store results in array
     with Pool(os.cpu_count() + 1) as pool:
         areas = pool.map(mcIntegrate, range(N))
-    end = time.time()
-    print(end - start)
 
     # graph approximation distribution
     plt.title("Distribution of Approximated Integrals")
