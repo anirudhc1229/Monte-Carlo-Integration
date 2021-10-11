@@ -11,7 +11,7 @@ f = np.sin  # function to integrate
 N = 10000   # sample size
 
 def mcIntegrate(p):
-    xrand = np.random.uniform(a, b, N)       # create array filled with random numbers within bounds
+    xrand = np.random.uniform(a, b, N)          # create array filled with random numbers within bounds
     integral = np.sum(f(xrand))                 # sum return values of function of each random number
     approx = integral * ((b - a) / float(N))    # scale integral by difference of bounds divided by sample size
     return approx
